@@ -6,11 +6,11 @@ import bg from "../images/frontpagebg.png";
 import logo from "../images/airbnb.png";
 import { ConnectButton,Icon,  Select, DatePicker,Input } from "web3uikit";
 import {useState} from "react";
-import Link from "react-router-dom"
+// import Link from "react-router-dom"
 
 const Home = () => {
   const [checkIn, setCheckIn] = useState(new Date());
-  const [checkOut, setCheckout] = useState(new Date());
+  const [checkOut, setCheckOut] = useState(new Date());
   const [destination, setDestination] = useState("New York");
   const [guests, setGuests] = useState(2);
 
@@ -104,9 +104,16 @@ const Home = () => {
          />
          
         </div>
-        <div className="searchButton">
-          <Icon fill="#ffffff" size={24} svg="search"/>
-        </div>
+        <Link to={"/rentals"}  state ={{
+          destination: destination,
+          checkIn: checkIn,
+          checkOut: checkOut,
+          guests: guests
+        }}>
+          <div className="searchButton">
+            <Icon fill="#ffffff" size={24} svg="search"/>
+          </div>
+        </Link>
       </div>
     </div>
     </>

@@ -4,9 +4,16 @@ import { Link } from "react-router-dom";
 import bg from "../images/frontpagebg.png";
 // import {bg} from "../images/frontpagebg"
 import logo from "../images/airbnb.png";
-import { ConnectButton, Select } from "web3uikit";
+import { ConnectButton,Icon,  Select, DatePicker,Input } from "web3uikit";
+import {useState} from "react";
+import Link from "react-router-dom"
 
 const Home = () => {
+  const [checkIn, setCheckIn] = useState(new Date());
+  const [checkOut, setCheckout] = useState(new Date());
+  const [destination, setDestination] = useState("New York");
+  const [guests, setGuests] = useState(2);
+
 
   return (
     <>
@@ -39,7 +46,7 @@ const Home = () => {
           location
           <Select 
             defaultOptionIndex={0}
-            onChange={(data) => console.log(data.label)}
+            onChange={(data) => setDestination(data.label)}
             options={[
 
               {
@@ -67,6 +74,10 @@ const Home = () => {
 
         <div className="inputs">
           check in 
+          <DatePicker 
+            id="CheckIn"
+            onChange={(event)=> setCheckIn(event.date)}
+          />
         </div>
         <div className="vl"/>
           
@@ -74,14 +85,28 @@ const Home = () => {
 
         <div className="inputs">
           check out
+          <DatePicker 
+            id="CheckOut"
+            onChange={(event)=> setCheckOut(event.date)}
+          />
         </div>
         <div className="vl"/>
           
   
         <div className="inputs">
           Guests
+          <Input
+          value={2}
+          name="AddGuests"
+          type="number"
+          onChange={(event)=> setGuests(Number(event.target.value))}
+
+         />
+         
         </div>
-        
+        <div className="searchButton">
+          <Icon fill="#ffffff" size={24} svg="search"/>
+        </div>
       </div>
     </div>
     </>

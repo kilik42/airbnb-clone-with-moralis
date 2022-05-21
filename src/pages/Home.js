@@ -116,6 +116,19 @@ const Home = () => {
         </Link>
       </div>
     </div>
+
+       <div className="randomLocation">
+         <div className="title">feel adventurous</div>
+         <div className="text">
+           Let us decide and discoer new places to stay, live work or just relax
+         </div>
+
+         <Button  
+           text = "explore a location"
+           onClick={()=> console.log(checkOut)}
+         />
+       </div>
+
     </>
   );
 };

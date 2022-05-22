@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import bg from "../images/frontpagebg.png";
 // import {bg} from "../images/frontpagebg"
 import logo from "../images/airbnb.png";
-import { ConnectButton,Icon,  Select, DatePicker,Input } from "web3uikit";
+import { ConnectButton,Icon,  Select, DatePicker,Input, Button } from  "web3uikit";
 import {useState} from "react";
 // import Link from "react-router-dom"
 
